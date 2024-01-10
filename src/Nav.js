@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ReactDOM } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -41,7 +41,15 @@ const internalLinks = [
     }
 ]
 
-const Nav = ({ isActive, screenMode }) => {
+const Nav = ({ 
+    isActive,
+    isPhone,
+    screenMode,
+    activeSection,
+    onHomeClick,
+    onAboutClick,
+    onProjectsClick
+}) => {
 
     return (
         isActive && (
@@ -65,16 +73,10 @@ const Nav = ({ isActive, screenMode }) => {
                         }
                     </ul>
                 </div>
-                <div>
-                    <ul className="internalLinks">
-                        {
-                            internalLinks.map(link => {
-                                return(
-                                    <Button text={link.name}/>
-                                )
-                            })
-                        }
-                    </ul>
+                <div className="internalLinks">
+                    <Button text={'HOME'} onClick={onHomeClick} status={activeSection === 'home' ? 'active': ''} type={'navButton'}/>
+                    <Button text={'ABOUT'} onClick={onAboutClick} status={activeSection === 'about' ? 'active': ''} type={'navButton'}/>
+                    <Button text={'PROJECTS'} onClick={onProjectsClick} status={activeSection === 'projects' ? 'active': ''} type={'navButton'}/>
                 </div>
             </div>
         )
