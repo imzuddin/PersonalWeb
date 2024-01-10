@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.test {
+    border: 5px solid white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    text-transform: uppercase;
+}
+
+.navParent {
+    display: grid;
+    width: 100%;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: transparent;
+    position: fixed;
+    z-index: 1000;
+}
+
+.navIcon{
+    font-size: 40px;
+    padding-left: 10px;
+}
+
+.dark{
+    color: white;
+}
+
+.light{
+    color: black;
+}
+
+.externalLinkIcon{
+    height: 30px;
+}
+
+.navLinks {
+    display: flex;
+}
+
+.externalLinks{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.externalLinks li{
+    height: 40px;
+    width: 40px;
+    padding: 8px;
+}
+
+i {
+    height: 20px;
+    width: 20px;
+}
+
+
+.internalLinks{
+    padding-right: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+.navButton{
+    height: 100%;
+    width: 100px;
+    color: white;
+    border: none;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.navButton:hover{
+    opacity: 0.25;
+    background-color: white;
+    color: black;
+}
+
+.navButton.active{
+    border: none;
+    background: transparent;
+    text-decoration-line: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 2.5px;
+}
+
+.navButton.dark{
+    color: black;
+    background: white;
+    border: 2px solid black;
+}
