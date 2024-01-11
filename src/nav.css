@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.test {
+    border: 5px solid white;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    text-transform: uppercase;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.navParent {
+    display: grid;
+    width: 100%;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 2fr;
+    background-color: hsl(0, 0%, 100%, 0.1);
+    backdrop-filter: blur(1rem);
+    position: fixed;
+    z-index: 1000;
+    height: 4rem;
+}
+
+.navLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+.navIcon{
+    padding: 0.5rem;
+    font-size: 40px;
+    align-items: center;
+    text-align: start;
+
+}
+
+.dark{
+    color: white;
+}
+
+.light{
+    color: black;
+}
+
+.externalLinkIcon{
+    height: 30px;
+}
+
+.externalLinks{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.externalLinks li{
+    width: 40px;
+    padding: 8px;
+}
+
+.internalLinks{
+    padding-right: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+@media (max-width: 50em) {
+
+    .mobile-nav-toggle{
+        display: block;
+        position: absolute;
+        z-index: 1001;
+        background-color:#ffffff;
+        width: 1.5rem;
+        height: 1.5rem;
+        top: 2rem;
+        right: 2rem;
+        background-color: transparent;
+        color: white;
+        border: none;
+    }
+
+    .nav-toggle-icon{
+        width: 100%;
+        height: 100%;
+    }
+
+    .navParent{
+        background-color: transparent;
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    .navLinks{
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        position: fixed;
+        background-color: hsl(0, 0%, 100%, 0.1);
+        backdrop-filter: blur(1rem);
+        inset: 0 0 0 30%;
+        transform: translate(100%);
+        border-radius: 10px;
+    }
+
+    .navLinks[data-visible="true"] {
+        transform: translate(0%);
+        transition: transform 250ms ease-in-out;
+    }
+
+    .externalLinks{
+        position: absolute;
+        bottom: 0;
+    }
+
+    .internalLinks{
+        padding-top: 8rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navButtonContainer{
+        height: 50px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.navButton{
+    height: 100%;
+    width: 100px;
+    color: white;
+    border: none;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.navButton:hover{
+    opacity: 0.25;
+    background-color: white;
+    color: black;
+}
+
+.navButton.active{
+    border: none;
+    background: transparent;
+    text-decoration-line: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 2.5px;
+}
+
+.navButton.dark{
+    color: black;
+    background: white;
+    border: 2px solid black;
+}
